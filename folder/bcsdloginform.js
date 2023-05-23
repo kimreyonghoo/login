@@ -19,8 +19,9 @@ function login(){
   let cookieid=$id[0].value;
   let exTime=new Date();
   exTime.setTime(exTime.getHours()+72);
-  document.cookie=`id=${cookieid};expires=${exTime}`;
+  document.cookie=`id=${cookieid};expires=${exTime};path=/`;
   localStorage.setItem("id", cookieid);
+  sessionStorage.setItem("id",cookieid);
   console.log(`${cookieid}`)
 }
 const $loginbtn=document.getElementById("loginbtn");
